@@ -1,27 +1,37 @@
 <section class="work-excursion">
   <div class="work-excursion__title">
-    <h2> Если сомневаетесь &mdash; приходите на экскурсию! </h2>
+    <div class="work-excursion__title-inner">
+      <h2> Если сомневаетесь &mdash; приходите на экскурсию! </h2>
+    </div>
+
+    <div class="work-excursion__bg">
+      <img src="assets/images/dist/excursion-bg.png" />
+    </div>
   </div>
 
-  <form class="work-excursion__form" action="#">
-    <select name="hero">
-      <option>Выберите героя</option>
-      <option value="t1">Чебурашка</option>
-      <option value="t2">Крокодил Гена</option>
-      <option value="t3">Шапокляк</option>
-      <option selected value="t4">Крыса Лариса</option>
-    </select>
+  <div class="work-excursion__form-wrapper">
+    <form class="work-excursion__form" action="#">
+      <div class="work-excursion__form-select-wrapper">
+        <select class="work-excursion__form-select" name="hero">
+          <option>Выберите героя</option>
+          <option value="t1">Чебурашка</option>
+          <option value="t2">Крокодил Гена</option>
+          <option value="t3">Шапокляк</option>
+          <option selected value="t4">Крыса Лариса</option>
+        </select>
+      </div>
 
-    <input placeholder="Ваша фамилия*" />
-    <input placeholder="Ваше имя и отчество*" />
-    <input placeholder="Номер телефона*" />
-    <input placeholder="Удобная дата*" />
-    <input placeholder="Сообщение работодателю" />
+      <input class="work-excursion__form-input" placeholder="Ваша фамилия*" />
+      <input class="work-excursion__form-input" placeholder="Ваше имя и отчество*" />
+      <input class="work-excursion__form-input" placeholder="Номер телефона*" />
+      <input class="work-excursion__form-input" placeholder="Удобная дата*" />
+      <input class="work-excursion__form-input" placeholder="Сообщение работодателю" />
 
-    <p>
-      Нажимая на кнопку «Записаться на экскурсию», Вы соглашаетесь
-      с политикой обработки персональных данных
-    </p>
-    <!--=include book-excursion.html -->
-  </form>
+      <p class="work-excursion__policy">
+        Нажимая на кнопку «Записаться на экскурсию», Вы соглашаетесь
+        с политикой обработки персональных данных
+      </p>
+      <!--=include book-excursion.html -->
+    </form>
+  </div>
 </section>

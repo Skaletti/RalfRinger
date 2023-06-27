@@ -1,10 +1,13 @@
-.send-resume {
+.send-resume,
+.book-excursion {
 	font-size: var(--font-size-18);
 	line-height: 120%;
 	color: $color--white;
 	background-color: $color--brand2;
 	padding: 16px 24px;
 	display: block;
+	width: 100%;
+	cursor: pointer;
 }
 
 .reverse-phone {
@@ -13,4 +16,12 @@
 	background-color: $color--white;
 	padding: 16px 24px;
 	display: block;
+	width: 100%;
+	cursor: pointer;
+}
+
+.work-excursion {
+	.book-excursion {
+		height: 80px;
+	}
 }

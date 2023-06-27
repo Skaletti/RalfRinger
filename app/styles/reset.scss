@@ -180,6 +180,10 @@ img {
   border-style: none;
 }
 
+input:focus-visible {
+	outline: none;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
