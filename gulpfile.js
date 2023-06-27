@@ -25,13 +25,13 @@ function pages() {
         .pipe(browserSync.stream());
 }
 function fonts () {
-    return src('app/fonts/src/*.*')
+    return src('app/assets/fonts/src/*.*')
         .pipe(fonter ({
             formats: ['woff', 'ttf']
         }))
-        .pipe(src('app/fonts/*.ttf'))
+        .pipe(src('app/assets/fonts/*.ttf'))
         .pipe(ttf2woff2())
-        .pipe(dest('app/fonts'))
+        .pipe(dest('app/assets/fonts'))
 }
 function  scripts() {
     return src([
@@ -44,7 +44,7 @@ function  scripts() {
 }
 
 function styles() {
-    return src('app/scss/style.scss')
+    return src('app/styles/style.scss')
         .pipe(autoprefixer({ overrideBrowserslist: ['last 10 version'] }))
         .pipe(concat('style.min.css'))
         .pipe(scss({ outputStyle: 'compressed' }))
@@ -58,7 +58,7 @@ function watching() {
             baseDir: "app/"
         }
     });
-    watch(['app/scss/style.scss'], styles)
+    watch(['app/styles/**/*.scss'], styles)
     watch(['app/images/src'], images)
     watch(['app/js/main.js'], scripts)
     watch(['app/components/*', 'app/pages/*', 'app/shared/ui/*'], pages)
@@ -66,23 +66,23 @@ function watching() {
 }
 
 function images() {
-    return src(['app/images/src/*.*', '!app/images/src/*.svg'])
-        .pipe(newer('app/images/dist'))
+    return src(['app/assets/images/src/*.*', '!app/assets/images/src/*.svg'])
+        .pipe(newer('app/assets/images/dist'))
         .pipe(avif({quality: 50}))
 
-        .pipe(src('app/images/src/*.*'))
-        .pipe(newer('app/images/dist'))
+        .pipe(src('app/assets/images/src/*.*'))
+        .pipe(newer('app/assets/images/dist'))
         .pipe(webp())
 
-        .pipe(src('app/images/src/*.*'))
-        .pipe(newer('app/images/dist'))
+        .pipe(src('app/assets/images/src/*.*'))
+        .pipe(newer('app/assets/images/dist'))
         .pipe(imagemin())
 
-        .pipe(dest('app/images/dist'))
+        .pipe(dest('app/assets/images/dist'))
 }
 
 function sprites () {
-    return src('app/images/dist/*.svg')
+    return src('app/assets/images/dist/*.svg')
         .pipe(svgSprite({
             mode: {
                 stack: {
@@ -91,7 +91,7 @@ function sprites () {
                 }
             }
         }))
-        .pipe(dest('app/images/dist'))
+        .pipe(dest('app/assets/images/dist'))
 }
 
 function cleanDist() {
@@ -102,10 +102,10 @@ function cleanDist() {
 function building() {
     return src([
         'app/css/style.min.css',
-        'app/images/dist/*.*',
-        '!app/images/dist/*.svg',
-        'app/images/dist/sprite.svg',
-        'app/fonts/*.*',
+        'app/assets/images/dist/*.*',
+        '!app/assets/images/dist/*.svg',
+        'app/assets/images/dist/sprite.svg',
+        'app/assets/fonts/*.*',
         'app/js/main.min.js',
         'app/**/*.html'
     ], {base: 'app'})

@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Arial';
+  src: local("Arial"),
+    url("app/assets/fonts/ArialCE.woff2") format('woff2'),
+    url("app/assets/fonts/ArialCE.woff") format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: local("Arial"),
+  url("app/assets/fonts/arialceb.woff2") format('woff2'),
+  url("app/assets/fonts/arialceb.woff") format('woff');
+  font-weight: 700;
+}
+
+html {
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+}
+
+.container {
+  max-width: 1682px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 135px;
+}
+
+@media screen and (max-width: 1440px) {
+
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 0 16px;
+  }
+}
