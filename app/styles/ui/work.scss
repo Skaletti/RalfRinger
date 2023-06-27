@@ -1,0 +1,19 @@
+.work {
+  &-hero {
+    &__title {
+			margin-bottom: 80px;
+    }
+
+    &__description {
+      font-size: var(--font-size-24);
+      font-family: Arial;
+      line-height: 120%;
+    }
+  }
+
+  &-why {
+    &__title {
+			margin-bottom: 60px;
+    }
+  }
+}

@@ -24,6 +24,15 @@ function pages() {
         .pipe(dest('app'))
         .pipe(browserSync.stream());
 }
+
+function components() {
+  return src('app/components/*.html')
+    .pipe(include({
+      includePaths: ['app/components', 'app/shared/ui']
+    }))
+    .pipe(dest('app'))
+    .pipe(browserSync.stream());
+}
 function fonts () {
     return src('app/assets/fonts/src/*.*')
         .pipe(fonter ({
@@ -120,6 +129,7 @@ exports.sprites = sprites;
 exports.scripts = scripts;
 exports.watching = watching;
 exports.building = building;
+exports.components = components;
 
 exports.build = series(cleanDist, building);
-exports.default = parallel(fonts, styles, images, scripts, pages, watching);
+exports.default = parallel(fonts, styles, images, scripts, pages, components, watching);
