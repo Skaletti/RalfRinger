@@ -20,5 +20,46 @@
     </div>
 
    <!--=include work-footer.html -->
+
+   <script>
+     const content = '' +
+       '<div class="option__item-icon-wrapper">' +
+       '<svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg"> ' +
+       '<path d="M1 5.61531L8.61909 13L21 1" stroke="#0099BA" stroke-width="2"/>' +
+       ' </svg>' +
+       '</div>'
+
+     function show(name, value) {
+       document.querySelector('.dropdown__input').value = name
+
+       const dataValue = `${value}`
+
+       const item = document.querySelector(`[data-value='${dataValue}']`)
+       const items = document.querySelectorAll('.option__item')
+
+       items.forEach((_item) => {
+         _item.classList.remove('is-selected')
+
+         const icon = _item.querySelector('.option__item-icon-wrapper')
+
+         if (icon) {
+           icon.remove()
+         }
+       })
+
+       item.classList.toggle('is-selected')
+
+       if (item.classList.contains('is-selected')) {
+         item.innerHTML = `<div class="option__item-content">${name}</div> ${content}`
+       }
+     }
+
+     const dropdown = document.querySelector('.dropdown')
+
+     dropdown.addEventListener('click', () => {
+       dropdown.classList.toggle('active')
+     })
+
+   </script>
 </body>
 </html>

@@ -232,21 +232,22 @@
             
               <div class="work-excursion__form-wrapper">
                 <form class="work-excursion__form" action="#">
-                  <div class="work-excursion__form-select-wrapper">
-                    <select class="work-excursion__form-select" name="hero">
-                      <option>Выберите героя</option>
-                      <option value="t1">Чебурашка</option>
-                      <option value="t2">Крокодил Гена</option>
-                      <option value="t3">Шапокляк</option>
-                      <option selected value="t4">Крыса Лариса</option>
-                    </select>
+                  <div class="dropdown">
+                    <input type="text" class="dropdown__input" placeholder="Выбрать фабрику*" readonly />
+            
+                    <div class="option">
+                      <div onclick="show('Московская обувная фабрика', 'moscow')" data-value="moscow" class="option__item">Московская обувная фабрика</div>
+                      <div onclick="show('Зарайская обувная фабрика', 'zaray')" data-value="zaray" class="option__item">Зарайская обувная фабрика</div>
+                      <div onclick="show('Владимирская обувная фабрика', 'vladimir')" data-value="vladimir" class="option__item">Владимирская обувная фабрика</div>
+                      <div onclick="show('Талдомская обувная фабрика', 'taldoma')" data-value="taldoma"  class="option__item">Талдомская обувная фабрика</div>
+                    </div>
                   </div>
             
-                  <input class="work-excursion__form-input" placeholder="Ваша фамилия*" />
-                  <input class="work-excursion__form-input" placeholder="Ваше имя и отчество*" />
-                  <input class="work-excursion__form-input" placeholder="Номер телефона*" />
-                  <input class="work-excursion__form-input" placeholder="Удобная дата*" />
-                  <input class="work-excursion__form-input" placeholder="Сообщение работодателю" />
+                  <input required class="work-excursion__form-input" placeholder="Ваша фамилия*" />
+                  <input required class="work-excursion__form-input" placeholder="Ваше имя и отчество*" />
+                  <input required class="work-excursion__form-input" placeholder="Номер телефона*" />
+                  <input required class="work-excursion__form-input" placeholder="Удобная дата*" />
+                  <input required class="work-excursion__form-input" placeholder="Сообщение работодателю" />
             
                   <p class="work-excursion__policy">
                     Нажимая на кнопку «Записаться на экскурсию», Вы соглашаетесь
@@ -282,5 +283,46 @@
        <img src="assets/images/dist/sprite.svg#work-footer-text" />
      </div>
    </footer>
+
+   <script>
+     const content = '' +
+       '<div class="option__item-icon-wrapper">' +
+       '<svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg"> ' +
+       '<path d="M1 5.61531L8.61909 13L21 1" stroke="#0099BA" stroke-width="2"/>' +
+       ' </svg>' +
+       '</div>'
+
+     function show(name, value) {
+       document.querySelector('.dropdown__input').value = name
+
+       const dataValue = `${value}`
+
+       const item = document.querySelector(`[data-value='${dataValue}']`)
+       const items = document.querySelectorAll('.option__item')
+
+       items.forEach((_item) => {
+         _item.classList.remove('is-selected')
+
+         const icon = _item.querySelector('.option__item-icon-wrapper')
+
+         if (icon) {
+           icon.remove()
+         }
+       })
+
+       item.classList.toggle('is-selected')
+
+       if (item.classList.contains('is-selected')) {
+         item.innerHTML = `<div class="option__item-content">${name}</div> ${content}`
+       }
+     }
+
+     const dropdown = document.querySelector('.dropdown')
+
+     dropdown.addEventListener('click', () => {
+       dropdown.classList.toggle('active')
+     })
+
+   </script>
 </body>
 </html>
