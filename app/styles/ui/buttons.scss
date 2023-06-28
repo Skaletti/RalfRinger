@@ -23,5 +23,9 @@
 .work-excursion {
 	.book-excursion {
 		height: 80px;
+
+		@media screen and (width < 767px) {
+			height: 92px;
+		}
 	}
 }
