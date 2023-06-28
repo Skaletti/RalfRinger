@@ -6,13 +6,13 @@
   height: 100%;
   flex-direction: column;
   align-items: flex-start;
-  margin: 164px 0 0 0;
+  margin: 164px 0 397px 0;
 
   &__video {
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100vw);
+    width: calc(100vw - 17px);
     height: 834px;
     z-index: -1;
     object-fit: cover;
@@ -46,12 +46,12 @@
   }
 
   @media screen and (max-width: 768px) {
-    margin: 310px 0 0 0;
+    margin: 310px 0 400px 0;
     max-height: 1024px;
   }
 
   @media screen and (max-width: 320px) {
-      margin: 131px 0 0 0;
+      margin: 131px 0 134px 0;
       max-height: 568px;
   }
 }
