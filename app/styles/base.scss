@@ -19,8 +19,11 @@
   font-weight: 400;
 }
 
-html {
+html, body {
   font-family: 'Arial', sans-serif;
+	font-size: var(--font-size-16);
+	color: $color--black;
+	line-height: 1;
 }
 
 h2 {
@@ -30,28 +33,12 @@ h2 {
 }
 
 .container {
-  max-width: 1682px;
+  max-width: 1708px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 135px;
-}
+  padding: 0 24px;
 
-@media screen and (max-width: 1440px) {
-
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 0 24px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-
-}
-
-@media screen and (max-width: 320px) {
-  .container {
-    padding: 0 16px;
-  }
+	@media screen and (width <= 767px) {
+		padding: 0 16px;
+	}
 }
