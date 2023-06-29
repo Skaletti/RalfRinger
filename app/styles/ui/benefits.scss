@@ -2,6 +2,14 @@
   display: flex;
   margin-bottom: 36px;
 
+  @media screen and (max-width: 768px) {
+    display: block;
+
+    .benefits-column:not(:last-child) {
+      margin: 0 0 76px 0;
+    }
+  }
+
   .benefits-column:not(:last-child) {
     margin: 0 210px 0 0;
   }
