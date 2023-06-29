@@ -180,6 +180,15 @@ img {
   border-style: none;
 }
 
+input:focus-visible {
+	outline: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;

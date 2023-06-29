@@ -1,27 +1,38 @@
 <section class="work-excursion">
   <div class="work-excursion__title">
-    <h2> Если сомневаетесь &mdash; приходите на экскурсию! </h2>
+    <div class="work-excursion__title-inner">
+      <h2 class="work-excursion__title-text"> Если сомневаетесь &mdash; приходите на экскурсию! </h2>
+    </div>
+
+    <div class="work-excursion__bg">
+      <img src="assets/images/dist/excursion-bg.png" />
+    </div>
   </div>
 
-  <form class="work-excursion__form" action="#">
-    <select name="hero">
-      <option>Выберите героя</option>
-      <option value="t1">Чебурашка</option>
-      <option value="t2">Крокодил Гена</option>
-      <option value="t3">Шапокляк</option>
-      <option selected value="t4">Крыса Лариса</option>
-    </select>
+  <div class="work-excursion__form-wrapper">
+    <form class="work-excursion__form" action="#">
+      <div class="dropdown">
+        <input type="text" class="dropdown__input" placeholder="Выбрать фабрику*" readonly />
 
-    <input placeholder="Ваша фамилия*" />
-    <input placeholder="Ваше имя и отчество*" />
-    <input placeholder="Номер телефона*" />
-    <input placeholder="Удобная дата*" />
-    <input placeholder="Сообщение работодателю" />
+        <div class="option">
+          <div onclick="show('Московская обувная фабрика', 'moscow')" data-value="moscow" class="option__item">Московская обувная фабрика</div>
+          <div onclick="show('Зарайская обувная фабрика', 'zaray')" data-value="zaray" class="option__item">Зарайская обувная фабрика</div>
+          <div onclick="show('Владимирская обувная фабрика', 'vladimir')" data-value="vladimir" class="option__item">Владимирская обувная фабрика</div>
+          <div onclick="show('Талдомская обувная фабрика', 'taldoma')" data-value="taldoma"  class="option__item">Талдомская обувная фабрика</div>
+        </div>
+      </div>
 
-    <p>
-      Нажимая на кнопку «Записаться на экскурсию», Вы соглашаетесь
-      с политикой обработки персональных данных
-    </p>
-    <!--=include book-excursion.html -->
-  </form>
+      <input required class="work-excursion__form-input" placeholder="Ваша фамилия*" />
+      <input required class="work-excursion__form-input" placeholder="Ваше имя и отчество*" />
+      <input required class="work-excursion__form-input" placeholder="Номер телефона*" />
+      <input required class="work-excursion__form-input" placeholder="Удобная дата*" />
+      <input required class="work-excursion__form-input" placeholder="Сообщение работодателю" />
+
+      <p class="work-excursion__policy">
+        Нажимая на кнопку «Записаться на экскурсию», Вы соглашаетесь
+        с политикой обработки персональных данных
+      </p>
+      <!--=include book-excursion.html -->
+    </form>
+  </div>
 </section>
