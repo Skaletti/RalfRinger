@@ -1,0 +1,39 @@
+.advantages {
+  margin-top: 152px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 172px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: 132px;
+  }
+}
+
+.advantages-column {
+  display: flex;
+
+  &__block {
+    max-width: 676px;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__block-description {
+    font-size: 24px;
+    line-height: 120%;
+    margin-bottom: 28px;
+  }
+
+  &__block-call {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+.advantages-title {
+  margin: 0 170px 0 0;
+}

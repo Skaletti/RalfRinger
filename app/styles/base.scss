@@ -1,17 +1,22 @@
 @font-face {
   font-family: 'Arial';
-  src: local("Arial"),
-    url("app/assets/fonts/ArialCE.woff2") format('woff2'),
+  src: url("../assets/fonts/ArialCE.woff2") format('woff2'),
     url("app/assets/fonts/ArialCE.woff") format('woff');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Arial';
-  src: local("Arial"),
-  url("app/assets/fonts/arialceb.woff2") format('woff2'),
+  src: url("../assets/fonts/arialceb.woff2") format('woff2'),
   url("app/assets/fonts/arialceb.woff") format('woff');
   font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../assets/fonts/proxima-nova-regular.woff2") format('woff2'),
+  url("app/assets/fonts/proxima-nova-regular.woff") format('woff');
+  font-weight: 400;
 }
 
 html, body {
@@ -22,7 +27,7 @@ html, body {
 }
 
 h2 {
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   font-size: 56px;
 }
